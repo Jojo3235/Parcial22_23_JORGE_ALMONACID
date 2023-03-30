@@ -58,6 +58,13 @@ class TestPolinomio(unittest.TestCase):
         Polinomio.agregar_termino(Polinomio7, 0, 7)
         self.assertEqual(Polinomio.mostrar(Polinomio.sumar(Polinomio6, Polinomio7)), "+10x^2+12x^1+14x^0")
 
+    def test_restar(self):
+        Polinomio8 = Polinomio()
+        Polinomio.agregar_termino(Polinomio8, 2, 5)
+        Polinomio9 = Polinomio()
+        Polinomio.agregar_termino(Polinomio9, 2, 3)
+        self.assertEqual(Polinomio.mostrar(Polinomio.restar(Polinomio8, Polinomio9)), "+2x^2")
+
     def test_multiplicar(self):
         Polinomio8 = Polinomio()
         Polinomio.agregar_termino(Polinomio8, 2, 5)
@@ -68,3 +75,10 @@ class TestPolinomio(unittest.TestCase):
         Polinomio.agregar_termino(Polinomio9, 1, 6)
         Polinomio.agregar_termino(Polinomio9, 0, 7)
         self.assertEqual(Polinomio.mostrar(Polinomio.multiplicar(Polinomio8, Polinomio9)), "+25x^4+60x^3+106x^2+84x^1+49x^0")
+
+    def test_dividir(self):
+        polinomio10 = Polinomio()
+        Polinomio.agregar_termino(polinomio10, 2, 5)
+        polinomio11 = Polinomio()
+        Polinomio.agregar_termino(polinomio11, 2, 5)
+        self.assertEqual(Polinomio.mostrar(Polinomio.dividir(polinomio10, polinomio11)), "+1.0x^0")

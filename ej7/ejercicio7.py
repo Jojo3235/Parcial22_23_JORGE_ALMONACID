@@ -70,7 +70,7 @@ class Polinomio(object):
             if total != 0:
                 Polinomio.agregar_termino(paux, i, total)
         return paux
-
+    
     def multiplicar(polinomio1, polinomio2):
         paux = Polinomio()
         pol1 = polinomio1.termino_mayor
